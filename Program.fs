@@ -12,12 +12,12 @@ let writeToFile (file: string) =
     async {
         let fileName = Path.GetFileName file
         let writeInTempFile =
-            use sw = new StreamWriter("/tmp/converted_files/" + fileName)
+            use sw = new StreamWriter(Path.Join("/tmp/converted_files/", fileName))
             sw.Write (modifyText file)
             sw.Flush |> ignore
             sw.Close |> ignore
         writeInTempFile
-        File.Move (("/tmp/converted_files/" + fileName), file, true)
+        File.Move (Path.Join("/tmp/converted_files/", fileName), file, true)
     }
 
 [<EntryPoint>]
