@@ -17,7 +17,7 @@ Does CRLF annoy you too? Use this Docker image to convert all files to LF.
 `$ docker run --rm -v $PWD:/data annoying-crlf "*.txt"`  
 
 ## Usage
-* To change the files create a volume which points to the folder **/data** inside in the container.  
+* To change the lineendings, create a volume which points to the **/data** folder inside the container.  
 * Pass as argument the filename which file should be converted. You can apply wildcards like:  
 `$ docker run --rm -v $PWD/src:/data danielschischkin/annoying-crlf:latest "*.php" "*.txt"`  
 
