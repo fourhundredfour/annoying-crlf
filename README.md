@@ -5,6 +5,7 @@ Does CRLF annoy you too? Use this Docker image to convert all files to LF.
 * [Requirements](#requirements)  
 * [Installation](#installation)  
 * [Usage](#usage)  
+* [Useful links](#useful-links)
 
 ## Requirements
 * Docker
@@ -18,4 +19,7 @@ Does CRLF annoy you too? Use this Docker image to convert all files to LF.
 ## Usage
 * To change the files create a volume which points to the folder **/data** inside in the container.  
 * Pass as argument the filename which file should be converted. You can apply wildcards like:  
-`$ docker run --rm -v $PWD/src:/data danielschischkin/annoying-crlf:latest "*.php"`  
+`$ docker run --rm -v $PWD/src:/data danielschischkin/annoying-crlf:latest "*.php" "*.txt"`  
+
+## Useful links
+* [https://hub.docker.com/r/danielschischkin/annoying-crlf](https://hub.docker.com/r/danielschischkin/annoying-crlf)
