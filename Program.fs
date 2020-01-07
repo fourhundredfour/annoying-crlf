@@ -10,7 +10,7 @@ let modifyText (file: string) =
 
 let writeToFile (file: string) =
     async {
-        let fileName = file.Split '/' |> Array.last
+        let fileName = Path.GetFileName file
         let writeInTempFile =
             use sw = new StreamWriter("/tmp/converted_files/" + fileName)
             sw.Write (modifyText file)
