@@ -13,8 +13,8 @@ Does CRLF annoy you too? Use this Docker image to convert all files to LF.
 ## Installation
 1. Pull the image or build it by executing the following command.  
 `$ docker build . -t annoying-crlf`  
-2. Run the container.
-`$ docker run --rm -v $PWD:/data annoying-crlf "*.txt"`
+2. Run the container.  
+`$ docker run --rm -v $PWD:/data annoying-crlf "*.txt"`  
 
 ## Usage
 * To change the files create a volume which points to the folder **/data** inside in the container.  
