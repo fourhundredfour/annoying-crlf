@@ -1,9 +1,7 @@
 ﻿open System.IO
 
-let lines path = seq { yield! File.ReadLines path }
-
 let modifyText (file: string) =
-    Seq.map (fun x -> x + "\n") (lines file)
+    Seq.map (fun x -> x + "\n") (File.ReadLines file)
 
 let writeToFile (file: string) =
     async {
