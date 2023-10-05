@@ -13,4 +13,4 @@ RUN mkdir -p /data /tmp/converted_files
 WORKDIR /usr/src/app
 COPY --from=build /usr/src/app/out /usr/src/app
 
-ENTRYPOINT [ "dotnet", "AnnoyingCRLF.dll" ]
+ENTRYPOINT [ "dotnet", "AnnoyingCRLF.dll", "--" ]
