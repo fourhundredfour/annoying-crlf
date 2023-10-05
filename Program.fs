@@ -15,9 +15,15 @@ let writeToFile (file: string) =
 
 [<EntryPoint>]
 let main argv =
-    argv
+    let options, patterns =
+        if argv.Length > 0 && argv[0] = "-r" then
+            EnumerationOptions(RecurseSubdirectories=true), argv[1..]
+        else
+            EnumerationOptions(), argv
+
+    patterns
     |> Array.map (fun x ->
-        Directory.GetFiles("/data", x)
+        Directory.GetFiles("/data", x, options)
         |> Array.map (Path.GetFullPath >> writeToFile)
         |> Async.Parallel
         |> Async.RunSynchronously)
